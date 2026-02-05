@@ -4,21 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VibeLink</title>
+  <style>
+    :root {
+      --pink: #ff4d94;
+      --pink-dark: #d9367f;
+      --text-dark: #2d2d2d;
+      --bg-light: #fafafa;
+      --white: #ffffff;
+    }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 4.5rem;
+      color: var(--pink-dark);
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 3rem;
+    }
+    footer {
+      position: absolute;
+      bottom: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+    a {
+      color: var(--pink);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+    a:hover {
+      color: var(--pink-dark);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-
   <h1>VibeLink</h1>
   <p>Real connections. Real vibes.</p>
-  
-</body>
+
   <footer>
-  <p>
-    <a href="/index.html">Home</a> •
-    <a href="/privacy.html">Privacy Policy</a> •
-    <a href="/terms.html">Terms of Service</a>
-  </p>
-  <p>Contact: <a href="mailto:hellovibelink@gmail.com">hellovibelink@gmail.com</a></p>
-
-</footer>
-
+    <p>
+      <a href="/index.html">Home</a> •
+      <a href="/privacy.html">Privacy Policy</a> •
+      <a href="/terms.html">Terms of Service</a>
+    </p>
+    <p>Contact: <a href="mailto:hellovibelink@gmail.com">hellovibelink@gmail.com</a></p>
+  </footer>
+</body>
 </html>
