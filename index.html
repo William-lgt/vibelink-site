@@ -1,135 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VibeLink | Real Connections</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink: #ff4d94;
-      --pink-gradient: linear-gradient(135deg, #ff4d94 0%, #d9367f 100%);
-      --gold: #ffcf4d;
-      --text-dark: #2d2d2d;
-      --bg-light: #fff5f8;
-      --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.8);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeLink | The Dating App with Real Vibe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff4d94;
+            --pink-dark: #d9367f;
+            --gold: #ffcf4d;
+            --bg: #fff5f8;
+            --white: #ffffff;
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background: var(--bg-light); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: #333; overflow-x: hidden; }
 
-    /* Navigation */
-    nav {
-      padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
-      position: fixed; top: 0; width: 100%; z-index: 1000; background: var(--glass); backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 77, 148, 0.1);
-    }
-    .logo { font-size: 1.6rem; font-weight: 800; color: #d9367f; text-decoration: none; letter-spacing: -1px; }
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 77, 148, 0.1);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { 
+            width: 42px; height: 42px; background: var(--pink); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 14px; box-shadow: 0 4px 15px rgba(255,77,148,0.3);
+        }
+        .logo-text { font-weight: 800; font-size: 1.6rem; color: #1a1a1a; letter-spacing: -0.5px; }
 
-    /* Hero Section */
-    .hero {
-      padding: 160px 5% 80px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px;
-      max-width: 1200px; margin: 0 auto; min-height: 100vh;
-    }
-    .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; }
-    .hero-content h1 span { color: var(--pink); position: relative; z-index: 1; }
-    .hero-content h1 span::after {
-      content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 12px;
-      background: var(--gold); opacity: 0.3; z-index: -1;
-    }
-    .hero-content p { font-size: 1.25rem; color: #555; margin-bottom: 32px; }
+        /* Hero Section */
+        .hero {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 160px 10% 80px; min-height: 100vh; max-width: 1400px; margin: 0 auto;
+        }
+        .hero-text { flex: 1.2; max-width: 650px; }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 800; }
+        .hero-text h1 span { color: var(--pink); position: relative; z-index: 1; }
+        .hero-text h1 span::after {
+            content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 12px;
+            background: var(--gold); opacity: 0.4; z-index: -1;
+        }
+        .hero-text p { font-size: 1.2rem; color: #555; margin-bottom: 40px; line-height: 1.6; }
 
-    /* Get Started (PC Bridge) */
-    .get-started {
-      background: var(--white); border-radius: 24px; padding: 30px;
-      display: flex; align-items: center; gap: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      border: 1px solid rgba(255, 77, 148, 0.1);
-    }
-    .qr-code {
-      width: 100px; height: 100px; background: #eee; border-radius: 12px;
-      display: flex; align-items: center; text-align: center; font-size: 0.7rem; color: #888;
-      border: 2px solid var(--gold);
-    }
-    .store-badges { display: flex; flex-direction: column; gap: 8px; }
-    .badge {
-      background: #000; color: white; padding: 8px 16px; border-radius: 8px;
-      font-size: 0.8rem; font-weight: bold; cursor: pointer; transition: 0.3s;
-    }
-    .badge:hover { transform: translateY(-2px); background: #222; }
+        /* Get Started Box (The Bridge) */
+        .get-started-card {
+            background: white; padding: 32px; border-radius: 28px; display: flex; align-items: center;
+            gap: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.06); margin-top: 40px; width: fit-content;
+            border: 1px solid rgba(255, 77, 148, 0.1);
+        }
+        .qr-placeholder {
+            width: 110px; height: 110px; border: 2.5px dashed var(--gold); border-radius: 16px;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            font-size: 0.7rem; color: #999; font-weight: 600; padding: 5px;
+        }
+        .download-info p { font-weight: 800; font-size: 1rem; margin-bottom: 12px; color: #1a1a1a; }
+        .store-btns { display: flex; gap: 10px; }
+        .store-btn { 
+            background: #000; color: white; padding: 10px 18px; border-radius: 10px; 
+            font-size: 0.8rem; font-weight: 700; text-decoration: none; transition: 0.3s;
+        }
+        .store-btn:hover { transform: translateY(-3px); background: #222; }
 
-    /* Floating Phone Mockup */
-    .phone-mockup {
-      width: 280px; height: 580px; background: #1a1a1a; border: 10px solid #2d2d2d;
-      border-radius: 40px; margin: 0 auto; box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-      position: relative; animation: float 5s ease-in-out infinite; overflow: hidden;
-    }
-    .screen {
-      width: 100%; height: 100%; background: var(--pink-gradient);
-      display: flex; align-items: center; justify-content: center; color: white; font-weight: 800;
-    }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        /* Floating Phone Mockup */
+        .hero-image { flex: 0.8; display: flex; justify-content: center; position: relative; }
+        .phone-mockup {
+            width: 300px; height: 600px; background: #111; border-radius: 48px;
+            border: 10px solid #222; position: relative; overflow: hidden;
+            box-shadow: 0 60px 120px rgba(0,0,0,0.25); animation: float 6s ease-in-out infinite;
+        }
+        .phone-screen {
+            width: 100%; height: 100%; background: linear-gradient(145deg, #ff4d94, #ffcf4d);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .phone-logo { 
+            width: 65px; height: 65px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--pink); font-weight: 800; font-size: 22px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-    /* Reveal animations */
-    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
 
-    footer { padding: 60px 5%; text-align: center; background: white; border-top: 1px solid #eee; }
-    footer a { margin: 0 15px; color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    footer a:hover { color: var(--pink); }
+        footer { padding: 60px 10% 40px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; background: white; }
+        footer p { color: #bbb; font-size: 0.9rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; margin-left: 24px; font-weight: 600; transition: 0.3s; }
+        .footer-links a:hover { color: var(--pink); }
 
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
-      .get-started { flex-direction: column; }
-    }
-  </style>
+        @media (max-width: 1024px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+            .hero-text { margin-bottom: 60px; }
+            .get-started-card { margin: 0 auto; }
+        }
+    </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html" class="logo">VibeLink</a>
-    <a href="mailto:hellovibelink@gmail.com" style="color: var(--pink); text-decoration: none; font-weight: 700;">Support</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-content reveal">
-      <h1>The Dating App with <span>Real Vibe.</span></h1>
-      <p>Connect with local people based on energy, not just photos. Join VibeLink today.</p>
-      
-      <div class="get-started">
-        <div class="qr-code">Scan to<br>Download</div>
-        <div class="store-badges">
-          <p style="font-weight: 700; font-size: 0.9rem;">Get the Mobile App</p>
-          <div class="badge">App Store</div>
-          <div class="badge">Google Play</div>
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">VL</div>
+            <span class="logo-text">VibeLink</span>
+        </a>
+        <div class="nav-links">
+            <a href="mailto:hellovibelink@gmail.com" style="color:var(--pink); text-decoration:none; font-weight:700;">Support</a>
         </div>
-      </div>
-    </div>
+    </nav>
 
-    <div class="reveal">
-      <div class="phone-mockup">
-        <div class="screen">VibeLink UI</div>
-      </div>
-    </div>
-  </section>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>The Dating App with <br><span>Real Vibe.</span></h1>
+            <p>Ditch the awkward bios. VibeLink connects you based on real energy and shared interests. Find your person today.</p>
+            
+            <div class="get-started-card">
+                <div class="qr-placeholder">Scan to<br>Download App</div>
+                <div class="download-info">
+                    <p>Get the Mobile App</p>
+                    <div class="store-btns">
+                        <a href="#" class="store-btn">App Store</a>
+                        <a href="#" class="store-btn">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <footer>
-    <p style="margin-bottom: 20px; color: #bbb;">© 2026 VibeLink. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
-  </footer>
+        <div class="hero-image">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-logo">VL</div>
+                    <p style="color:white; margin-top:20px; font-weight:700; letter-spacing:1px;">VibeLink</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Scroll reveal logic
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+    <footer>
+        <p>© 2026 VibeLink. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
