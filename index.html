@@ -1,154 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeLink | The Dating App with Real Vibe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --pink: #ff4d94;
-            --pink-dark: #d9367f;
-            --gold: #ffcf4d;
-            --bg: #ffffff;
-            --soft-pink: #fff5f8;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeLink | Real Connections. Real Vibes.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff4d94;
+      --pink-dark: #d9367f;
+      --text-dark: #2d2d2d;
+      --bg-light: #ffffff;
+      --soft-pink: #fff5f8;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: #333; overflow-x: hidden; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    
+    body {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
 
-        /* Navigation */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
-        }
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-heart { 
-            width: 40px; height: 40px; background: var(--pink); border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: 800; font-size: 14px; box-shadow: 0 4px 15px rgba(255,77,148,0.3);
-        }
-        .logo-text { font-weight: 800; font-size: 1.6rem; color: #1a1a1a; letter-spacing: -0.5px; }
-        .nav-links a { margin-left: 30px; text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 600; }
+    /* Navigation */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
+      background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { width: 45px; height: 45px; object-fit: contain; }
+    .logo-text { font-weight: 800; font-size: 1.6rem; color: #1a1a1a; letter-spacing: -0.5px; }
 
-        /* Hero Section */
-        .hero {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 160px 10% 80px; min-height: 100vh; max-width: 1400px; margin: 0 auto;
-        }
-        .hero-text { flex: 1.2; max-width: 600px; }
-        .hero-text h1 { font-size: 4.2rem; line-height: 1.1; margin-bottom: 24px; font-weight: 800; color: #1a1a1a; }
-        .hero-text h1 span { color: var(--pink); }
-        .hero-text p { font-size: 1.1rem; color: #777; margin-bottom: 40px; line-height: 1.6; max-width: 450px; }
+    /* Hero Section */
+    .hero {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 160px 10% 80px; min-height: 100vh; max-width: 1400px; margin: 0 auto;
+    }
+    .hero-text { flex: 1.2; max-width: 600px; }
+    .hero-text h1 { font-size: 4.2rem; line-height: 1.1; margin-bottom: 24px; font-weight: 800; color: #1a1a1a; }
+    .hero-text h1 span { color: var(--pink); }
+    .hero-text p { font-size: 1.2rem; color: #666; margin-bottom: 40px; line-height: 1.6; }
 
-        /* Get Started Card - Glassmorphism */
-        .get-started-card {
-            background: white; padding: 32px; border-radius: 30px; display: flex; align-items: center;
-            gap: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.07); margin-top: 40px; width: fit-content;
-            border: 1px solid #f0f0f0;
-        }
-        .qr-box {
-            width: 100px; height: 100px; border: 2px solid #eee; border-radius: 14px;
-            background: url('https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://vibelink-site.pages.dev') center/cover;
-        }
-        .download-options p { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; color: var(--pink); }
-        .store-btns { display: flex; gap: 10px; }
-        .store-btn { 
-            background: #000; color: white; padding: 10px 20px; border-radius: 10px; 
-            display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; text-decoration: none;
-            transition: 0.3s;
-        }
-        .store-btn:hover { transform: translateY(-3px); background: #222; }
+    /* Get Started Card */
+    .get-started-card {
+      background: white; padding: 32px; border-radius: 30px; display: flex; align-items: center;
+      gap: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.07); margin-top: 40px; width: fit-content;
+      border: 1px solid #f0f0f0;
+    }
+    .qr-box {
+      width: 100px; height: 100px; border-radius: 14px;
+      background: url('https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://vibelink-site.pages.dev') center/cover;
+    }
+    .download-options p { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; color: var(--pink); }
+    .store-btns { display: flex; gap: 10px; }
+    .store-btn { 
+      background: #000; color: white; padding: 10px 18px; border-radius: 10px; 
+      font-size: 0.8rem; font-weight: 700; text-decoration: none; transition: 0.3s;
+    }
 
-        /* Floating Phone Mockup */
-        .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
-        .phone-mockup {
-            width: 310px; height: 630px; background: #000; border-radius: 45px;
-            border: 12px solid #1a1a1a; position: relative; overflow: hidden;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.2); animation: float 6s ease-in-out infinite;
-        }
-        .phone-screen {
-            width: 100%; height: 100%; background: linear-gradient(135deg, #ff4d94, #ffcf4d);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-        }
-        
-        /* White VL Logo on Phone */
-        .phone-logo-heart { 
-            width: 70px; height: 70px; background: var(--pink); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: 800; font-size: 22px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-        }
+    /* Phone Mockup */
+    .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
+    .phone-mockup {
+      width: 310px; height: 630px; background: #000; border-radius: 45px;
+      border: 12px solid #1a1a1a; position: relative; overflow: hidden;
+      box-shadow: 0 50px 100px rgba(0,0,0,0.2); animation: float 6s ease-in-out infinite;
+    }
+    .phone-screen {
+      width: 100%; height: 100%; background: linear-gradient(135deg, #ff4d94, #ffcf4d);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .phone-screen img { width: 100px; height: 100px; object-fit: contain; }
 
-        /* Decorative Pink Circle behind Phone */
-        .bg-circle {
-            position: absolute; width: 450px; height: 450px; background: var(--soft-pink);
-            border-radius: 50%; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%);
-        }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
 
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+    footer { 
+      padding: 40px 10%; display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid #eee; margin-top: 40px; background: #fff;
+    }
+    footer p { color: #999; font-size: 0.9rem; }
+    footer a { color: #666; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
 
-        /* Footer Links */
-        footer { padding: 40px 10%; display: flex; justify-content: space-between; border-top: 1px solid #eee; margin-top: 50px; }
-        .footer-legal a { color: #999; text-decoration: none; font-size: 0.85rem; margin-right: 25px; font-weight: 600; }
-        .footer-legal a:hover { color: var(--pink); }
-
-        @media (max-width: 1024px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-            .hero-text h1 { font-size: 3rem; }
-            .get-started-card { margin: 40px auto; }
-            .bg-circle { width: 300px; height: 300px; }
-        }
-    </style>
+    @media (max-width: 1024px) {
+      .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+      .hero-text h1 { font-size: 3rem; }
+      .get-started-card { margin: 40px auto; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="#" class="nav-logo">
-            <div class="logo-heart">VL</div>
-            <span class="logo-text">VibeLink</span>
-        </a>
-        <div class="nav-links">
-            <a href="#">House</a>
-            <a href="#">Events</a>
-            <a href="mailto:hellovibelink@gmail.com">Support</a>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>The Dating App with <br><span>Real Vibe.</span></h1>
-            <p>Connect with people based on energy, not just photos. Join the next generation of dating.</p>
-            
-            <div class="get-started-card">
-                <div class="qr-box"></div>
-                <div class="download-options">
-                    <p>Get Started</p>
-                    <div class="store-btns">
-                        <a href="#" class="store-btn">App Store</a>
-                        <a href="#" class="store-btn">Google Play</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="vl_logo.png" alt="VibeLink Logo">
+      <span class="logo-text">VibeLink</span>
+    </a>
+    <div>
+      <a href="mailto:hellovibelink@gmail.com" style="text-decoration:none; color:var(--pink); font-weight:700;">Support</a>
+    </div>
+  </nav>
 
-        <div class="hero-image">
-            <div class="bg-circle"></div>
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <div class="phone-logo-heart">VL</div>
-                    <p style="color:white; margin-top:20px; font-weight:700; letter-spacing:1px; font-size:0.9rem;">VibeLink</p>
-                </div>
-            </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>The Dating App with <br><span>Real Vibe.</span></h1>
+      <p>Real connections. Real vibes. Ditch the bio and find someone who matches your energy.</p>
+      
+      <div class="get-started-card">
+        <div class="qr-box"></div>
+        <div class="download-options">
+          <p>Scan to Download</p>
+          <div class="store-btns">
+            <a href="#" class="store-btn">App Store</a>
+            <a href="#" class="store-btn">Google Play</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <footer>
-        <p style="color:#ccc; font-size:0.8rem">© 2026 VibeLink. All rights reserved.</p>
-        <div class="footer-legal">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+    <div class="hero-image">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <img src="vl_logo.png" alt="VibeLink Logo">
+          <p style="color:white; margin-top:20px; font-weight:700; letter-spacing:1px;">VibeLink</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 VibeLink. All rights reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+
 </body>
 </html>
