@@ -11,7 +11,6 @@
       --pink-dark: #d9367f;
       --text-dark: #2d2d2d;
       --bg-light: #ffffff;
-      --soft-pink: #fff5f8;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -27,9 +26,17 @@
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 1000;
       background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo img { width: 45px; height: 45px; object-fit: contain; }
+    
+    /* Using your vl_logo.png here */
+    .nav-logo img { 
+      width: 42px; 
+      height: 42px; 
+      object-fit: contain; 
+    }
+    
     .logo-text { font-weight: 800; font-size: 1.6rem; color: #1a1a1a; letter-spacing: -0.5px; }
 
     /* Hero Section */
@@ -42,7 +49,7 @@
     .hero-text h1 span { color: var(--pink); }
     .hero-text p { font-size: 1.2rem; color: #666; margin-bottom: 40px; line-height: 1.6; }
 
-    /* Get Started Card */
+    /* Glassmorphism Get Started Card */
     .get-started-card {
       background: white; padding: 32px; border-radius: 30px; display: flex; align-items: center;
       gap: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.07); margin-top: 40px; width: fit-content;
@@ -52,38 +59,47 @@
       width: 100px; height: 100px; border-radius: 14px;
       background: url('https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://vibelink-site.pages.dev') center/cover;
     }
-    .download-options p { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; color: var(--pink); }
+    .download-label { font-weight: 800; font-size: 0.9rem; margin-bottom: 12px; color: var(--pink); text-transform: uppercase; }
     .store-btns { display: flex; gap: 10px; }
     .store-btn { 
-      background: #000; color: white; padding: 10px 18px; border-radius: 10px; 
+      background: #000; color: white; padding: 10px 20px; border-radius: 10px; 
       font-size: 0.8rem; font-weight: 700; text-decoration: none; transition: 0.3s;
     }
+    .store-btn:hover { background: #333; transform: translateY(-2px); }
 
-    /* Phone Mockup */
+    /* Floating Phone Mockup */
     .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
     .phone-mockup {
       width: 310px; height: 630px; background: #000; border-radius: 45px;
       border: 12px solid #1a1a1a; position: relative; overflow: hidden;
-      box-shadow: 0 50px 100px rgba(0,0,0,0.2); animation: float 6s ease-in-out infinite;
+      box-shadow: 0 50px 100px rgba(0,0,0,0.15); animation: float 6s ease-in-out infinite;
     }
     .phone-screen {
       width: 100%; height: 100%; background: linear-gradient(135deg, #ff4d94, #ffcf4d);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
-    .phone-screen img { width: 100px; height: 100px; object-fit: contain; }
+    
+    /* Using your vl_logo.png inside the phone screen too */
+    .phone-screen img { 
+      width: 110px; 
+      height: 110px; 
+      object-fit: contain; 
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+    }
 
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
     footer { 
       padding: 40px 10%; display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid #eee; margin-top: 40px; background: #fff;
+      border-top: 1px solid #eee; background: #fff;
     }
     footer p { color: #999; font-size: 0.9rem; }
-    footer a { color: #666; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
+    footer a { color: #666; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.85rem; }
+    footer a:hover { color: var(--pink); }
 
     @media (max-width: 1024px) {
-      .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-      .hero-text h1 { font-size: 3rem; }
+      .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+      .hero-text h1 { font-size: 3.2rem; }
       .get-started-card { margin: 40px auto; }
     }
   </style>
@@ -92,23 +108,23 @@
 
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="vl_logo.png" alt="VibeLink Logo">
+      <img src="vl_logo.png" alt="VibeLink">
       <span class="logo-text">VibeLink</span>
     </a>
     <div>
-      <a href="mailto:hellovibelink@gmail.com" style="text-decoration:none; color:var(--pink); font-weight:700;">Support</a>
+      <a href="mailto:hellovibelink@gmail.com" style="text-decoration:none; color:var(--pink); font-weight:800; font-size:0.9rem;">SUPPORT</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="hero-text">
       <h1>The Dating App with <br><span>Real Vibe.</span></h1>
-      <p>Real connections. Real vibes. Ditch the bio and find someone who matches your energy.</p>
+      <p>Stop swiping on bios and start connecting with energy. Join the community where your vibe speaks louder than your profile.</p>
       
       <div class="get-started-card">
         <div class="qr-box"></div>
         <div class="download-options">
-          <p>Scan to Download</p>
+          <p class="download-label">Scan to Connect</p>
           <div class="store-btns">
             <a href="#" class="store-btn">App Store</a>
             <a href="#" class="store-btn">Google Play</a>
@@ -121,7 +137,7 @@
       <div class="phone-mockup">
         <div class="phone-screen">
           <img src="vl_logo.png" alt="VibeLink Logo">
-          <p style="color:white; margin-top:20px; font-weight:700; letter-spacing:1px;">VibeLink</p>
+          <p style="color:white; margin-top:15px; font-weight:800; font-size:1.1rem; letter-spacing:1px;">VibeLink</p>
         </div>
       </div>
     </div>
