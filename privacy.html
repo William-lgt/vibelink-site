@@ -1,186 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy - VibeLink</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink: #ff4d94;
-      --pink-dark: #d9367f;
-      --gold: #ffcf4d;
-      --bg: #fff5f8;
-      --white: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VibeLink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff4d94;
+            --pink-dark: #d9367f;
+            --gold: #ffcf4d;
+            --bg: #fff5f8;
+            --white: #ffffff;
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    
-    body { 
-      background-color: var(--bg); 
-      color: #333; 
-      line-height: 1.6; 
-      padding: 60px 20px; 
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: #333; line-height: 1.6; padding: 40px 20px; }
 
-    /* Branding Header */
-    .policy-header { text-align: center; margin-bottom: 40px; }
-    .policy-header img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 10px 15px rgba(255, 77, 148, 0.2));
-    }
-    h1 { font-size: 2.2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
-    .last-updated { font-size: 0.9rem; color: #999; font-weight: 600; }
+        /* Branding Header */
+        .policy-header { text-align: center; margin-bottom: 40px; }
+        .policy-header img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 10px 15px rgba(255, 77, 148, 0.2));
+        }
+        h1 { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
+        .last-updated { font-size: 0.85rem; color: #999; font-weight: 600; }
 
-    /* Main Glassmorphism Container */
-    main {
-      max-width: 700px; 
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      border-radius: 36px; 
-      padding: 40px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-      border: 1px solid white;
-    }
+        /* Main Glassmorphism Container */
+        main {
+            max-width: 600px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 30px; padding: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid white;
+        }
 
-    /* Modern Collapsible Sections */
-    details {
-      background: var(--white);
-      border-radius: 20px;
-      margin-bottom: 15px;
-      border: 1px solid #f0f0f0;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-    details[open] {
-      border-color: var(--pink);
-      box-shadow: 0 10px 25px rgba(255, 77, 148, 0.08);
-    }
-    summary {
-      padding: 22px 25px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #1a1a1a;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after {
-      content: '+';
-      color: var(--pink);
-      font-size: 1.5rem;
-      transition: 0.3s;
-    }
-    details[open] summary::after {
-      transform: rotate(45deg);
-      color: #ccc;
-    }
+        /* Collapsible Section Styling */
+        details {
+            background: var(--white);
+            border-radius: 20px;
+            margin-bottom: 12px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        details[open] {
+            border-color: var(--pink);
+            box-shadow: 0 8px 20px rgba(255, 77, 148, 0.05);
+        }
+        summary {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1a1a1a;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '→';
+            color: var(--pink);
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        details[open] summary::after {
+            transform: rotate(90deg);
+            color: #ccc;
+        }
 
-    /* Content Styling */
-    .content { 
-      padding: 0 25px 25px; 
-      font-size: 1.05rem; 
-      color: #555; 
-      border-top: 1px solid #fafafa; 
-      padding-top: 20px; 
-    }
-    ul { padding-left: 20px; margin: 15px 0; }
-    li { margin-bottom: 10px; }
-    a { color: var(--pink); text-decoration: none; font-weight: 600; }
-    a:hover { text-decoration: underline; }
+        /* Content inside sections */
+        .content { padding: 0 20px 20px; font-size: 0.95rem; color: #555; }
+        .content b { color: #1a1a1a; }
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 8px; }
+        a { color: var(--pink); text-decoration: none; font-weight: 600; }
 
-    footer { 
-      text-align: center; 
-      margin-top: 50px; 
-      padding-bottom: 40px;
-    }
-    .footer-links a {
-      margin: 0 15px;
-      color: #999;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+        .footer-action { text-align: center; margin-top: 30px; }
+        .back-btn { text-decoration: none; color: var(--pink); font-weight: 700; font-size: 0.9rem; }
 
-    @media (max-width: 600px) {
-      main { padding: 25px 20px; border-radius: 24px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+        @media (max-width: 480px) {
+            main { padding: 15px; border-radius: 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="policy-header">
-    <img src="vl_logo.png" alt="VibeLink Logo">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: February 4, 2026</p>
-  </div>
-
-  <main>
-    <details open>
-      <summary>1. Introduction</summary>
-      <div class="content">
-        VibeLink (“we”, “our”, or “us”) respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the VibeLink mobile application (“App”). By using VibeLink, you agree to the collection and use of information in accordance with this policy.
-      </div>
-    </details>
-
-    <details>
-      <summary>2. Information We Collect</summary>
-      <div class="content">
-        We may collect the following types of information:
-        <ul>
-          <li>Personal details (name, age, email, profile info)</li>
-          <li>Photos and videos you upload</li>
-          <li>Approximate location data for matches</li>
-          <li>App usage data and feature interactions</li>
-          <li>Device data (OS, version, device type)</li>
-        </ul>
-      </div>
-    </details>
-
-    <details>
-      <summary>3. Payments & Advertising</summary>
-      <div class="content">
-        Paid subscriptions are processed securely through Apple or Google via RevenueCat. We do not store your payment card details. Free users may see ads; partners may collect anonymized data for relevance.
-      </div>
-    </details>
-
-    <details>
-      <summary>4. How We Use Data</summary>
-      <div class="content">
-        We use your info to manage your account, provide personalized matching, improve app performance, process subscriptions, and ensure community safety and legal compliance.
-      </div>
-    </details>
-
-    <details>
-      <summary>5. Sharing & Security</summary>
-      <div class="content">
-        We do not sell your personal data. Data is only shared with trusted partners (analytics, hosting, payments) necessary to run the App. While we take reasonable measures to protect your data, no system is 100% secure.
-      </div>
-    </details>
-
-    <details>
-      <summary>6. Your Rights</summary>
-      <div class="content">
-        You can access, update, or delete your info via the App or by contacting <a href="mailto:hellovibelink@gmail.com">hellovibelink@gmail.com</a>. VibeLink is for users 18+ and we do not knowingly collect data from minors.
-      </div>
-    </details>
-  </main>
-
-  <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+    <div class="policy-header">
+        <img src="vl_logo.png" alt="VibeLink Logo">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: October 2023</p>
     </div>
-    <p style="color:#bbb; margin-top:20px; font-size:0.8rem;">© 2026 VibeLink. All rights reserved.</p>
-  </footer>
+
+    <main>
+        <details open>
+            <summary>Our Commitment</summary>
+            <div class="content">
+                Welcome to VibeLink. We prioritize your privacy. This policy explains how we collect, process, and protect your info. By using VibeLink, you consent to these practices in full.
+            </div>
+        </details>
+
+        <details>
+            <summary>Who Can Use VibeLink</summary>
+            <div class="content">
+                <ul>
+                    <li><b>Age:</b> You must be 18+ years old.</li>
+                    <li><b>Safety:</b> No felony or sex crime convictions.</li>
+                    <li><b>Compliance:</b> You must follow all applicable laws.</li>
+                </ul>
+                Accounts of ineligible users will be terminated immediately.
+            </div>
+        </details>
+
+        <details>
+            <summary>Information We Collect</summary>
+            <div class="content">
+                <b>Data You Give Us:</b>
+                <ul>
+                    <li>Registration (Name, email, phone, DOB).</li>
+                    <li>Profile (Gender, interests, bio).</li>
+                    <li>Media (Photos and videos).</li>
+                    <li>Messages sent within the app.</li>
+                </ul>
+                <b>Data Collected Automatically:</b>
+                <ul>
+                    <li>Device model, OS, and IP address.</li>
+                    <li>Approximate location (with your consent).</li>
+                    <li>App usage and performance metrics.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Sensitive Permissions</summary>
+            <div class="content">
+                To work properly, we request access to:
+                <ul>
+                    <li><b>Geolocation:</b> To show you nearby matches.</li>
+                    <li><b>Camera/Gallery:</b> To upload your profile photos.</li>
+                    <li><b>Face Detection:</b> On-device detection to ensure authentic photos.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>How Your Data is Used</summary>
+            <div class="content">
+                We use your info to:
+                <ul>
+                    <li>Create your account and match you with others.</li>
+                    <li>Facilitate secure messaging.</li>
+                    <li>Improve the app and process payments.</li>
+                    <li>Keep the community safe and prevent fraud.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Your Rights & Deletion</summary>
+            <div class="content">
+                You stay in control:
+                <ul>
+                    <li><b>Access:</b> View your data at any time.</li>
+                    <li><b>Delete:</b> Use 'Delete Account' in Settings or visit our <a href="https://vibelink-site.pages.dev/delete-request" target="_blank">Web Portal</a>.</li>
+                    <li><b>Grace Period:</b> Permanent deletion takes 7 days.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Contact Support</summary>
+            <div class="content">
+                Questions? Reach out to us:
+                <ul>
+                    <li><b>Email:</b> hellovibelink@gmail.com.</li>
+                    <li><b>Web:</b> vibelink-site.pages.dev.</li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="footer-action">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </main>
 
 </body>
 </html>
