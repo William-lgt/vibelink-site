@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VibeLink | Real Connections</title>
+  <title>VibeLink | Real Connections. Real Vibes.</title>
   <style>
     :root {
       --pink: #ff4d94;
@@ -12,7 +12,7 @@
       --text-dark: #2d2d2d;
       --bg-light: #fff5f8;
       --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.8);
+      --glass: rgba(255, 255, 255, 0.85);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
@@ -24,57 +24,59 @@
       position: fixed; top: 0; width: 100%; z-index: 1000; background: var(--glass); backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 77, 148, 0.1);
     }
-    .logo { font-size: 1.6rem; font-weight: 800; color: #d9367f; text-decoration: none; letter-spacing: -1px; }
+    .logo { font-size: 1.8rem; font-weight: 800; color: #d9367f; text-decoration: none; letter-spacing: -1px; }
 
     /* Hero Section */
     .hero {
-      padding: 160px 5% 80px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px;
-      max-width: 1200px; margin: 0 auto;
+      padding: 160px 5% 80px; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 50px;
+      max-width: 1200px; margin: 0 auto; min-height: 100vh;
     }
-    .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; }
-    .hero-content h1 span { color: var(--pink); }
-    .hero-content p { font-size: 1.25rem; color: #555; margin-bottom: 32px; }
+    .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; }
+    .hero-content h1 span { color: var(--pink); position: relative; }
+    .hero-content h1 span::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 8px; background: var(--gold); opacity: 0.4; z-index: -1; }
+    .hero-content p { font-size: 1.25rem; color: #555; margin-bottom: 40px; max-width: 500px; }
 
-    /* Get Started Section (The PC-to-Mobile Bridge) */
+    /* Onboarding / Get Started (PC to Mobile) */
     .get-started {
-      background: white; border-radius: 30px; padding: 40px; border: 1px solid rgba(255, 77, 148, 0.2);
-      display: flex; align-items: center; gap: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      background: white; border-radius: 30px; padding: 35px; border: 1px solid rgba(255, 77, 148, 0.15);
+      display: flex; align-items: center; gap: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.04);
     }
-    .qr-placeholder {
-      width: 120px; height: 120px; background: #f0f0f0; border: 4px solid var(--gold);
-      border-radius: 15px; display: flex; align-items: center; text-align: center; font-size: 0.7rem; color: #999;
+    .qr-box {
+      width: 110px; height: 110px; background: #fafafa; border: 2px dashed var(--gold);
+      border-radius: 12px; display: flex; align-items: center; text-align: center; font-size: 0.7rem; color: #999; padding: 10px;
     }
+    .store-btns div { 
+        background: #000; color: white; padding: 10px 20px; border-radius: 8px; 
+        font-size: 0.8rem; margin-top: 10px; cursor: pointer; display: inline-block; 
+        transition: transform 0.2s;
+    }
+    .store-btns div:hover { transform: translateY(-2px); }
 
-    /* Buttons */
-    .btn {
-      padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700;
-      transition: all 0.3s ease; display: inline-block; border: none; cursor: pointer;
+    /* Floating Phone Mockup */
+    .phone-wrapper { position: relative; display: flex; justify-content: center; }
+    .phone-mockup {
+      width: 280px; height: 580px; background: #1a1a1a; border: 12px solid #2d2d2d;
+      border-radius: 45px; box-shadow: 0 50px 100px rgba(0,0,0,0.15);
+      position: relative; overflow: hidden; animation: float 6s ease-in-out infinite;
     }
-    .btn-pink { background: var(--pink-gradient); color: white; box-shadow: 0 10px 20px rgba(255, 77, 148, 0.3); }
-    .btn-pink:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 77, 148, 0.4); }
+    .screen-content {
+      width: 100%; height: 100%; background: var(--pink-gradient);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-    /* Profile Cards (Animations) */
+    /* Scroll Reveal */
     .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    .phone-mockup {
-      position: relative; width: 300px; height: 600px; background: #2d2d2d;
-      border: 8px solid #1a1a1a; border-radius: 40px; margin: 0 auto;
-      box-shadow: 0 50px 100px rgba(0,0,0,0.2);
-    }
-    .phone-screen {
-      width: 100%; height: 100%; border-radius: 30px; overflow: hidden;
-      background: linear-gradient(to bottom, #ff4d94, #ffcf4d);
-      display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;
-    }
-
-    footer { padding: 60px 5%; text-align: center; background: white; border-top: 1px solid #eee; }
+    footer { padding: 80px 5% 40px; text-align: center; background: white; border-top: 1px solid #eee; }
     footer a { margin: 0 15px; color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
     footer a:hover { color: var(--pink); }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .get-started { flex-direction: column; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+      .hero-content p { margin: 0 auto 40px; }
+      .get-started { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -82,35 +84,36 @@
 
   <nav>
     <a href="index.html" class="logo">VibeLink</a>
-    <a href="mailto:hellovibelink@gmail.com" class="btn btn-pink">Support</a>
+    <a href="mailto:hellovibelink@gmail.com" style="color: var(--pink); text-decoration: none; font-weight: 700;">Support</a>
   </nav>
 
   <section class="hero">
     <div class="hero-content reveal">
-      <h1>Real Vibes.<br><span>Real Local.</span></h1>
-      <p>The first dating app that prioritizes your energy over your bio. Ready to find your match?</p>
+      <h1>Real Connections. <br><span>Real Vibes.</span></h1>
+      <p>Ditch the profiles, find the energy. Join the next generation of dating designed for real life.</p>
       
       <div class="get-started">
-        <div class="qr-placeholder">Scan to<br>Download App</div>
-        <div>
-          <p style="font-weight: bold; margin-bottom: 10px;">Get the app on your phone</p>
-          <div style="display: flex; gap: 10px;">
-             <div style="background:#000; color:white; padding:8px 15px; border-radius:8px; font-size:0.8rem">App Store</div>
-             <div style="background:#000; color:white; padding:8px 15px; border-radius:8px; font-size:0.8rem">Google Play</div>
-          </div>
+        <div class="qr-box">Scan QR code to download</div>
+        <div class="store-btns">
+          <p style="font-weight: 700; margin-bottom: 5px;">Available on iOS & Android</p>
+          <div style="margin-right: 5px;">App Store</div>
+          <div>Google Play</div>
         </div>
       </div>
     </div>
 
-    <div class="hero-visual reveal">
+    <div class="phone-wrapper reveal">
       <div class="phone-mockup">
-        <div class="phone-screen">VibeLink UI</div>
+        <div class="screen-content">
+          <span style="font-size: 2rem;">VL</span>
+          <p style="font-size: 0.8rem; margin-top: 10px;">Find your match...</p>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p style="margin-bottom: 20px; color:#bbb;">© 2026 VibeLink. All rights reserved.</p>
+    <p style="margin-bottom: 20px; color: #bbb;">© 2026 VibeLink. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy Policy</a>
@@ -124,7 +127,6 @@
         if (entry.isIntersecting) entry.target.classList.add('active');
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
