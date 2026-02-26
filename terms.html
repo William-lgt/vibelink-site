@@ -1,53 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms of Service - VibeLink</title>
-  <style>
-    :root {
-      --pink: #ff4d94;
-      --pink-dark: #d9367f;
-      --gold: #ffcf4d;
-      --bg-light: #fff5f8;
-    }
-    body { background: var(--bg-light); font-family: -apple-system, sans-serif; line-height: 1.8; color: #333; padding: 40px 20px; }
-    main {
-      max-width: 850px; margin: 40px auto; background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(15px); padding: 60px; border-radius: 40px;
-      border: 1px solid white; box-shadow: 0 25px 60px rgba(0,0,0,0.05);
-    }
-    .back-home { display: inline-block; margin-bottom: 30px; color: var(--pink); text-decoration: none; font-weight: 700; }
-    h1 { font-size: 2.8rem; color: var(--pink-dark); margin-bottom: 10px; }
-    h2 { 
-      color: var(--pink-dark); font-size: 1.6rem; margin-top: 45px; 
-      border-left: 6px solid var(--gold); padding-left: 15px;
-    }
-    p, li { margin-bottom: 15px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - VibeLink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff4d94;
+            --pink-dark: #d9367f;
+            --gold: #ffcf4d;
+            --bg: #fff5f8;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: #333; line-height: 1.6; padding: 40px 20px; }
+
+        /* Branding Header */
+        .legal-header { text-align: center; margin-bottom: 40px; }
+        .logo-heart {
+            width: 75px; height: 75px; background: var(--pink); border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 22px; margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(255, 77, 148, 0.2);
+        }
+        h1 { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
+        .last-updated { font-size: 0.85rem; color: #999; font-weight: 600; }
+
+        /* Main Glassmorphism Container */
+        main {
+            max-width: 650px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 30px; padding: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid white;
+        }
+
+        /* Collapsible Section Styling */
+        details {
+            background: var(--white);
+            border-radius: 20px;
+            margin-bottom: 12px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        details[open] {
+            border-color: var(--pink);
+            box-shadow: 0 8px 20px rgba(255, 77, 148, 0.05);
+        }
+        summary {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1a1a1a;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            color: var(--pink);
+            font-size: 1.4rem;
+            transition: 0.3s;
+        }
+        details[open] summary::after {
+            transform: rotate(45deg);
+            color: #ccc;
+        }
+
+        /* Content inside sections */
+        .content { padding: 0 20px 20px; font-size: 0.95rem; color: #555; border-top: 1px solid #fafafa; padding-top: 15px; }
+        .content b { color: #1a1a1a; }
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 8px; }
+        a { color: var(--pink); text-decoration: none; font-weight: 600; }
+
+        .footer-action { text-align: center; margin-top: 30px; }
+        .back-btn { text-decoration: none; color: var(--pink); font-weight: 700; font-size: 0.9rem; }
+
+        @media (max-width: 480px) {
+            main { padding: 15px; border-radius: 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <main>
-    <a href="index.html" class="back-home">← Back to Home</a>
-    <h1>Terms of Service</h1>
-    <p style="color:#888; font-size: 0.9rem;">Last updated: February 4, 2026</p>
+    <div class="legal-header">
+        <div class="logo-heart">VL</div>
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: October 2023</p>
+    </div>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By using the VibeLink mobile application, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+    <main>
+        <details open>
+            <summary>1. Welcome to VibeLink</summary>
+            <div class="content">
+                By using the VibeLink mobile application and related services, you agree to be bound by these Terms in full. These govern your eligibility, content, and safety while using our platform.
+            </div>
+        </details>
 
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 18 years old to use VibeLink. By creating an account, you represent that you meet this requirement.</p>
+        <details>
+            <summary>2. Who Can Join (Eligibility)</summary>
+            <div class="content">
+                To use VibeLink:
+                <ul>
+                    <li>You must be <b>18 years or older</b>.</li>
+                    <li>You must not have been convicted of a felony or sex crime.</li>
+                    <li>You must follow all local, state, and national laws.</li>
+                </ul>
+                We reserve the right to verify eligibility and ban accounts that violate these rules.
+            </div>
+        </details>
 
-    <h2>3. Prohibited Conduct</h2>
-    <p>You agree not to harass, abuse, or harm other users, or use the App for illegal purposes. We reserve the right to terminate accounts that violate these rules.</p>
+        <details>
+            <summary>3. Your Account & Security</summary>
+            <div class="content">
+                <ul>
+                    <li>Provide accurate info when registering.</li>
+                    <li>Keep your login credentials private.</li>
+                    <li>You are responsible for all activity on your account.</li>
+                    <li>Notify us immediately of any unauthorized access.</li>
+                </ul>
+            </div>
+        </details>
 
-    <h2>4. Limitation of Liability</h2>
-    <p>VibeLink is provided “as is.” We do not guarantee matches or specific outcomes. We are not liable for incidental damages arising from your use of the App.</p>
+        <details>
+            <summary>4. Content Rules (UGC)</summary>
+            <div class="content">
+                You own your content, but grant us a license to show it in the App. <b>Prohibited content includes:</b>
+                <ul>
+                    <li>Sexually explicit or pornographic material.</li>
+                    <li>Hate speech, bullying, or harassment.</li>
+                    <li>Scams, fraud, or impersonation.</li>
+                    <li>Illegal activities or violence.</li>
+                </ul>
+                Content is monitored by automated tools and human reviewers. Violations result in permanent bans.
+            </div>
+        </details>
 
-    <h2>5. Contact</h2>
-    <p>Questions? Reach out to <a href="mailto:hellovibelink@gmail.com" style="color:var(--pink)">hellovibelink@gmail.com</a>.</p>
-  </main>
+        <details>
+            <summary>5. Subscriptions & Payments</summary>
+            <div class="content">
+                VibeLink offers Standard and Premium tiers.
+                <ul>
+                    <li>Payments are handled via Google Play Store / Apple App Store.</li>
+                    <li>Subscriptions <b>auto-renew</b> unless cancelled 24 hours before the period ends.</li>
+                    <li>Refunds are managed by the respective App Stores.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>6. Safety Guidelines</summary>
+            <div class="content">
+                Your safety is priority, but we do not conduct background checks.
+                <ul>
+                    <li>Be cautious when meeting users offline.</li>
+                    <li>Never share financial or sensitive personal info.</li>
+                    <li>Report any suspicious behavior via in-app tools.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>7. Legal Limits & Liability</summary>
+            <div class="content">
+                VibeLink is provided “as-is.” We are not liable for:
+                <ul>
+                    <li>Indirect or incidental damages.</li>
+                    <li>Issues arising from user interactions.</li>
+                    <li>App downtime or technical bugs.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>8. Governing Law</summary>
+            <div class="content">
+                These Terms are governed by the laws of <b>The Republic of Zambia</b>. Any disputes will be resolved in the courts of Lusaka, Zambia.
+            </div>
+        </details>
+
+        <details>
+            <summary>9. Contact Us</summary>
+            <div class="content">
+                For support or legal inquiries:
+                <ul>
+                    <li><b>Email:</b> hellovibelink@gmail.com</li>
+                    <li><b>Web:</b> vibelink-site.pages.dev</li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="footer-action">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </main>
 
 </body>
 </html>
