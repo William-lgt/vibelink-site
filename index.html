@@ -3,65 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VibeLink</title>
+  <title>VibeLink | Real Connections</title>
   <style>
     :root {
       --pink: #ff4d94;
-      --pink-dark: #d9367f;
+      --pink-gradient: linear-gradient(135deg, #ff4d94 0%, #d9367f 100%);
+      --gold: #ffcf4d;
       --text-dark: #2d2d2d;
-      --bg-light: #fafafa;
+      --bg-light: #fff5f8;
       --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.8);
+      --shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: system-ui, sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      margin: 0;
-      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--pink-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      padding: 0 10%;
+      background: radial-gradient(circle at top right, #fff0f5, transparent);
     }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
     h1 {
-      font-size: 4.5rem;
-      color: var(--pink-dark);
-      margin-bottom: 1rem;
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-dark);
     }
-    p {
-      font-size: 1.6rem;
-      margin-bottom: 3rem;
-    }
-    footer {
+
+    h1 span { color: var(--pink); position: relative; }
+    h1 span::after {
+      content: '';
       position: absolute;
-      bottom: 2rem;
-      text-align: center;
-      width: 100%;
+      bottom: 10px; left: 0; width: 100%; height: 8px;
+      background: var(--gold); opacity: 0.4; z-index: -1;
     }
-    a {
-      color: var(--pink);
+
+    .hero p {
+      font-size: 1.4rem;
+      color: #666;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* --- Buttons --- */
+    .btn {
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+      cursor: pointer;
     }
-    a:hover {
-      color: var(--pink-dark);
-      text-decoration: underline;
+
+    .btn-primary {
+      background: var(--pink-gradient);
+      color: white;
+      box-shadow: 0 10px 20px rgba(255, 77, 148, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255, 77, 148, 0.4);
+    }
+
+    /* --- Profile Cards Section --- */
+    .cards-container {
+      display: flex;
+      gap: 30px;
+      padding: 60px 5%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile-card {
+      width: 280px;
+      height: 380px;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.1s ease;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 70%;
+      background: #eee;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: var(--gold);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 80px 5% 40px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--pink); }
+
+    @media (max-width: 768px) {
+      .hero { text-align: center; }
+      h1 { font-size: 3rem; }
     }
   </style>
 </head>
 <body>
-  <h1>VibeLink</h1>
-  <p>Real connections. Real vibes.</p>
+
+  <nav>
+    <div class="logo-text">VibeLink</div>
+    <div>
+      <a href="mailto:hellovibelink@gmail.com" class="btn" style="color: var(--pink)">Support</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1 class="reveal">Find Your <span>Vibe</span>.</h1>
+    <p class="reveal">Real connections aren't found in algorithms. They're found in moments. Welcome to the modern way of meeting.</p>
+    <div class="reveal">
+      <a href="#" class="btn btn-primary">Get Started Now</a>
+    </div>
+  </section>
+
+  <section class="cards-container">
+    <div class="profile-card reveal" data-tilt>
+      <div class="card-tag">New Vibe</div>
+      <div class="profile-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80')"></div>
+      <h3>Sarah, 24</h3>
+      <p style="color: #777; font-size: 0.9rem;">Loves hiking & vinyl records</p>
+    </div>
+
+    <div class="profile-card reveal" data-tilt>
+      <div class="profile-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div>
+      <h3>Marcus, 27</h3>
+      <p style="color: #777; font-size: 0.9rem;">Professional chef & traveler</p>
+    </div>
+
+    <div class="profile-card reveal" data-tilt>
+      <div class="card-tag" style="background: var(--pink); color: white;">Trending</div>
+      <div class="profile-img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div>
+      <h3>Elena, 22</h3>
+      <p style="color: #777; font-size: 0.9rem;">Art lover & Coffee addict</p>
+    </div>
+  </section>
 
   <footer>
-    <p>
-      <a href="index.html">Home</a> •
-      <a href="privacy.html">Privacy Policy</a> •
-      <a href="terms.html">Terms of Service</a>
-    </p>
-    <p>Contact: <a href="mailto:hellovibelink@gmail.com">hellovibelink@gmail.com</a></p>
+    <p style="margin-bottom: 20px;">© 2026 VibeLink. Crafted for connections.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
   </footer>
+
+  <script>
+    // Scroll Reveal Logic
+    const revealElements = document.querySelectorAll('.reveal');
+    const scrollHandler = () => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    // Card Tilt Logic (Micro-interaction)
+    const cards = document.querySelectorAll('[data-tilt]');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('load', scrollHandler);
+  </script>
 </body>
 </html>
