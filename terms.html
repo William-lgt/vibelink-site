@@ -5,42 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - VibeLink</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Standard favicon -->
-    <link rel="icon" href="favicon try.png" type="image/png" sizes="32x32">
-    <!-- Apple / high-res touch icons -->
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon try.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon try.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon try.png">
     <style>
         :root {
-            --pink: #ff4d94;
-            --pink-dark: #d9367f;
-            --bg: #fff5f8;
+            --indigo: #5B67CA;
+            --coral: #F2A384;
+            --bg: #f8f9ff;
             --white: #ffffff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg); color: #333; line-height: 1.6; padding: 40px 20px; }
-        /* Branding Header */
         .terms-header { text-align: center; margin-bottom: 40px; }
-        .terms-header img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 10px 15px rgba(255, 77, 148, 0.2));
-        }
+        .terms-header img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px; }
         h1 { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
         .last-updated { font-size: 0.85rem; color: #999; font-weight: 600; }
-        /* Main Glassmorphism Container */
         main {
             max-width: 600px; margin: 0 auto;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             border-radius: 30px; padding: 25px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
             border: 1px solid white;
         }
-        /* Collapsible Section Styling */
         details {
             background: var(--white);
             border-radius: 20px;
@@ -49,10 +34,7 @@
             transition: all 0.3s ease;
             overflow: hidden;
         }
-        details[open] {
-            border-color: var(--pink);
-            box-shadow: 0 8px 20px rgba(255, 77, 148, 0.05);
-        }
+        details[open] { border-color: var(--indigo); }
         summary {
             padding: 20px;
             font-weight: 700;
@@ -64,100 +46,95 @@
             align-items: center;
             color: #1a1a1a;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            color: var(--pink);
-            font-size: 1.4rem;
-            transition: 0.3s;
-        }
-        details[open] summary::after {
-            transform: rotate(45deg);
-            color: #ccc;
-        }
-        /* Content inside sections */
+        summary::after { content: '+'; color: var(--indigo); font-size: 1.4rem; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
         .content { padding: 0 20px 20px; font-size: 0.95rem; color: #555; border-top: 1px solid #fafafa; padding-top: 15px; }
         .content b { color: #1a1a1a; }
         ul { padding-left: 20px; margin: 10px 0; }
         li { margin-bottom: 8px; }
-        a { color: var(--pink); text-decoration: none; font-weight: 600; }
+        a { color: var(--indigo); text-decoration: none; font-weight: 600; }
         .footer-action { text-align: center; margin-top: 30px; }
-        .back-btn { text-decoration: none; color: var(--pink); font-weight: 700; font-size: 0.9rem; }
-        @media (max-width: 480px) {
-            main { padding: 15px; border-radius: 20px; }
-            h1 { font-size: 1.5rem; }
-        }
+        .back-btn { text-decoration: none; color: var(--indigo); font-weight: 700; }
     </style>
 </head>
 <body>
     <div class="terms-header">
         <img src="vl_logo.png" alt="VibeLink Logo">
         <h1>Terms of Service</h1>
-        <p class="last-updated">Last Updated: October 2023</p>
+        <p class="last-updated">Last Updated: May 2024</p>
     </div>
     <main>
         <details open>
-            <summary>1. Introduction</summary>
+            <summary>1. Acceptance of Terms</summary>
             <div class="content">
-                Welcome to VibeLink. By accessing or using our App, you agree to be bound by these Terms in full. If you do not agree, please do not use the service.
+                By creating a VibeLink account, you agree to these Terms. VibeLink is a social platform for adults (18+) to connect. If you do not agree to these terms, you must not use the app.
             </div>
         </details>
+
         <details>
-            <summary>2. Eligibility</summary>
+            <summary>2. Safety & Eligibility</summary>
             <div class="content">
-                To use VibeLink:
+                To use VibeLink, you warrant that:
                 <ul>
-                    <li>You must be at least <b>18 years old</b>.</li>
-                    <li>You must not have been convicted of a felony or sex crime.</li>
-                    <li>You must comply with all local and national laws of Zimbabwe.</li>
+                    <li>You are at least <b>18 years old</b>.</li>
+                    <li>You have never been convicted of a felony or any crime involving violence or sexual misconduct.</li>
+                    <li>You will comply with the <b>laws of Zimbabwe</b> and your local jurisdiction.</li>
                 </ul>
             </div>
         </details>
+
         <details>
-            <summary>3. Content Rules (UGC)</summary>
+            <summary>3. Content & Zero-Tolerance Policy</summary>
             <div class="content">
-                You are responsible for the content you post. <b>Prohibited content includes:</b>
+                You are solely responsible for the content you post. <b>VibeLink has a zero-tolerance policy for:</b>
                 <ul>
                     <li>Sexually explicit or pornographic material.</li>
                     <li>Hate speech, harassment, or bullying.</li>
-                    <li>Scams, fraud, or illegal activities.</li>
+                    <li>Fraudulent activity or impersonation.</li>
                 </ul>
-                Violations will result in account suspension or a permanent ban.
+                <b>24-Hour Moderation:</b> We review reports within 24 hours. Violators will have their content removed and accounts permanently banned without warning.
             </div>
         </details>
+
         <details>
-            <summary>4. Subscriptions & Billing</summary>
+            <summary>4. Rights You Grant Us</summary>
             <div class="content">
-                VibeLink offers Premium tiers.
+                By posting photos or a bio on VibeLink, you grant us a non-exclusive, royalty-free, worldwide license to host, store, and display that content specifically to provide the service to you and other users. You retain ownership of your content.
+            </div>
+        </details>
+
+        <details>
+            <summary>5. Reporting & Blocking</summary>
+            <div class="content">
+                VibeLink provides tools to keep you safe:
                 <ul>
-                    <li>Payments are processed through the Google Play Store or Apple App Store.</li>
-                    <li>Subscriptions <b>auto-renew</b> unless cancelled 24 hours before the period ends.</li>
-                    <li>Refunds are managed by the respective store supports.</li>
+                    <li><b>Blocking:</b> You can block any user at any time to prevent further interaction.</li>
+                    <li><b>Reporting:</b> Use the 'Report' flag on any profile or message to alert our safety team.</li>
                 </ul>
             </div>
         </details>
+
         <details>
-            <summary>5. Account Termination</summary>
+            <summary>6. Limitation of Liability</summary>
             <div class="content">
-                We reserve the right to suspend or terminate accounts that violate our terms or engage in suspicious activity without prior notice. Unused subscription fees are forfeited upon termination.
+                <b>Use at your own risk.</b> VibeLink does not conduct criminal background checks. We are not liable for any damages, physical harm, or emotional distress resulting from your interactions with other users, whether online or in person. Always meet in public places and prioritize your safety.
             </div>
         </details>
+
         <details>
-            <summary>6. Governing Law</summary>
+            <summary>7. Subscriptions (Plus & Elite)</summary>
             <div class="content">
-                These Terms are governed by the laws of <b>The Republic of Zimbabwe</b>. All disputes shall be resolved in the courts of Harare, Zimbabwe.
+                Payments are handled via the Apple App Store or Google Play. Subscriptions <b>auto-renew</b> unless canceled at least 24 hours before the end of the current period. Refunds are subject to the respective store's policies.
             </div>
         </details>
+
         <details>
-            <summary>7. Contact Information</summary>
+            <summary>8. Governing Law</summary>
             <div class="content">
-                For legal inquiries or support:
-                <ul>
-                    <li><b>Email:</b> hellovibelink@gmail.com</li>
-                    <li><b>Web:</b> vibelink-site.pages.dev</li>
-                </ul>
+                These terms are governed by the <b>laws of the Republic of Zimbabwe</b>. Any disputes shall be settled in the courts of Harare.
             </div>
         </details>
+
         <div class="footer-action">
             <a href="index.html" class="back-btn">← Back to Home</a>
         </div>
